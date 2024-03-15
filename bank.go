@@ -4,9 +4,8 @@ import "fmt"
 
 func main() {
 	var accountBalance = 1000.0
-	for i := 0; i < 200; i++ {
-
-		fmt.Println("Welcome to go bank")
+	fmt.Println("Welcome to go bank")
+	for {
 		fmt.Println("What do you want to do?")
 		fmt.Println("1. Check balance")
 		fmt.Println("2. Deposit money")
@@ -26,7 +25,8 @@ func main() {
 
 			if depositAmount <= 0 {
 				fmt.Println("Invalid amount. Must be greater than 0.")
-				return
+				// return
+				continue
 			}
 
 			accountBalance += depositAmount
@@ -37,7 +37,8 @@ func main() {
 			fmt.Scan(&withdrawAmount)
 			if withdrawAmount <= 0 {
 				fmt.Println("Invalid amount. Must be greater than 0.")
-				return
+				// return
+				continue
 			}
 			if withdrawAmount > accountBalance {
 				fmt.Println("Invalid amount. You can't withdraw more than you have.")
@@ -47,7 +48,10 @@ func main() {
 			fmt.Println("Balance updated, New amount: ", accountBalance)
 		} else {
 			fmt.Println("Good bye!")
+			// return
+			break
 		}
 
 	}
+	fmt.Println("Thanks for choosing our bank")
 }
