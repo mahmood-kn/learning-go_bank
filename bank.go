@@ -16,12 +16,12 @@ func writeBalanceToFile(balance float64) {
 func getBalanceFromFile() (float64, error) {
 	data, err := os.ReadFile(accountBalanceFile)
 	if err != nil {
-		return 1000, errors.New("Failed to find balance file.")
+		return 1000, errors.New("Failed to find balance file.\n")
 	}
 	balanceText := string(data)
 	balance, err := strconv.ParseFloat(balanceText, 64)
 	if err != nil {
-		return 1000, errors.New("Failed to parse stored balance value.")
+		return 1000, errors.New("Failed to parse stored balance value.\n")
 	}
 	return balance, nil
 }
