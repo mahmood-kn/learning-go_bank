@@ -42,7 +42,8 @@ func main() {
 			}
 			if withdrawAmount > accountBalance {
 				fmt.Println("Invalid amount. You can't withdraw more than you have.")
-				return
+				// return
+				continue
 			}
 			accountBalance -= withdrawAmount
 			fmt.Println("Balance updated, New amount: ", accountBalance)
